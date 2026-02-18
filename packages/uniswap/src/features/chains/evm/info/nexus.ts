@@ -18,8 +18,7 @@ import { Platform } from 'uniswap/src/features/platforms/types/Platform'
 import { ElementName } from 'uniswap/src/features/telemetry/constants'
 import { buildUSDC } from 'uniswap/src/features/tokens/stablecoin'
 
-// TODO: Replace with actual deployed contract address on Nexus Testnet3
-const NEXUS_USDC_ADDRESS = '0x0000000000000000000000000000000000000002'
+const NEXUS_USDC_ADDRESS = '0xc35E449D3481Ba7cb787Be8A74F3997Afe78d1AB'
 
 const tokens = buildChainTokens({
   stables: {
@@ -86,12 +85,11 @@ export const NEXUS_CHAIN_INFO = {
   tokens,
   supportsV4: false,
   supportsNFTs: false,
-  // TODO: Replace with actual deployed contract address on Nexus Testnet3
   wrappedNativeCurrency: {
     name: 'Wrapped NEX',
     symbol: 'WNEX',
     decimals: 18,
-    address: '0x0000000000000000000000000000000000000001',
+    address: '0x6181dC10C6f66e8F0c31B44accdC5DDA009218CC',
   },
   gasConfig: {
     send: {

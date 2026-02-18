@@ -11,11 +11,10 @@ export const { USDC: USDC_NEXUS } = NEXUS_CHAIN_INFO.tokens
 // Default USDC is Nexus USDC
 export const USDC = USDC_NEXUS
 
-// TODO: Replace with actual deployed contract address on Nexus Testnet3
 export const WRAPPED_NATIVE_CURRENCY: { [chainId: number]: Token | undefined } = {
   [UniverseChainId.Nexus]: new Token(
     UniverseChainId.Nexus,
-    '0x0000000000000000000000000000000000000001', // Placeholder WNEX address
+    '0x6181dC10C6f66e8F0c31B44accdC5DDA009218CC', // Placeholder WNEX address
     18,
     'WNEX',
     'Wrapped NEX',
