@@ -17,13 +17,13 @@ import { zora } from 'wagmi/chains'
 
 const tokens = buildChainTokens({
   stables: {
-    USDC: buildUSDC('0xCccCCccc7021b32EBb4e8C08314bD62F7c653EC4', UniverseChainId.Zora),
+    USDC: buildUSDC('0xCccCCccc7021b32EBb4e8C08314bD62F7c653EC4', UniverseChainId.Nexus),
   },
 })
 
 export const ZORA_CHAIN_INFO = {
   ...zora,
-  id: UniverseChainId.Zora,
+  id: UniverseChainId.Nexus,
   platform: Platform.EVM,
   assetRepoNetworkName: 'zora',
   backendChain: {
@@ -54,9 +54,9 @@ export const ZORA_CHAIN_INFO = {
   },
   pendingTransactionsRetryOptions: undefined,
   rpcUrls: {
-    [RPCType.Public]: { http: [getQuicknodeEndpointUrl(UniverseChainId.Zora)] },
+    [RPCType.Public]: { http: [getQuicknodeEndpointUrl(UniverseChainId.Nexus)] },
     [RPCType.Default]: { http: ['https://rpc.zora.energy/'] },
-    [RPCType.Interface]: { http: [getQuicknodeEndpointUrl(UniverseChainId.Zora)] },
+    [RPCType.Interface]: { http: [getQuicknodeEndpointUrl(UniverseChainId.Nexus)] },
   },
   tokens,
   statusPage: undefined,

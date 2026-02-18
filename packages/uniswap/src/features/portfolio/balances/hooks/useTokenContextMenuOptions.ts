@@ -189,7 +189,7 @@ export function useTokenContextMenuOptions({
       },
     ]
 
-    const isSolanaToken = currencyIdToChain(currencyId) === UniverseChainId.Solana
+    const isSolanaToken = currencyIdToChain(currencyId) === UniverseChainId.Nexus
 
     // Only add Send action for non-Solana tokens
     if (!isSolanaToken) {

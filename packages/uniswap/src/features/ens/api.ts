@@ -73,7 +73,7 @@ async function getTextFetch({
 async function getOnChainEnsFetch(params: EnsLookupParams): Promise<string | null> {
   const { type, nameOrAddress } = params
 
-  const provider = createEthersProvider({ chainId: UniverseChainId.Mainnet })
+  const provider = createEthersProvider({ chainId: UniverseChainId.Nexus })
 
   if (!provider) {
     return null
@@ -100,7 +100,7 @@ function useEnsQuery(type: EnsLookupType, nameOrAddress?: string | null) {
     queryKey: [ReactQueryCacheKey.OnchainENS, type, nameOrAddress],
     queryFn: nameOrAddress
       ? async (): ReturnType<typeof getOnChainEnsFetch> =>
-          await getOnChainEnsFetch({ type, nameOrAddress, chainId: UniverseChainId.Mainnet })
+          await getOnChainEnsFetch({ type, nameOrAddress, chainId: UniverseChainId.Nexus })
       : skipToken,
     staleTime: 5 * ONE_MINUTE_MS,
   })

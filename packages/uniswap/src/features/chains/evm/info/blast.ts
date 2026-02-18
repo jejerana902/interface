@@ -22,13 +22,13 @@ import { blast } from 'wagmi/chains'
 
 const tokens = buildChainTokens({
   stables: {
-    USDB: new Token(UniverseChainId.Blast, '0x4300000000000000000000000000000000000003', 18, 'USDB', 'USDB'),
+    USDB: new Token(UniverseChainId.Nexus, '0x4300000000000000000000000000000000000003', 18, 'USDB', 'USDB'),
   },
 })
 
 export const BLAST_CHAIN_INFO = {
   ...blast,
-  id: UniverseChainId.Blast,
+  id: UniverseChainId.Nexus,
   platform: Platform.EVM,
   assetRepoNetworkName: 'blast',
   backendChain: {
@@ -65,7 +65,7 @@ export const BLAST_CHAIN_INFO = {
     logo: ETH_LOGO,
   },
   rpcUrls: {
-    [RPCType.Public]: { http: [getQuicknodeEndpointUrl(UniverseChainId.Blast)] },
+    [RPCType.Public]: { http: [getQuicknodeEndpointUrl(UniverseChainId.Nexus)] },
     [RPCType.Default]: { http: ['https://rpc.blast.io/'] },
     [RPCType.Interface]: { http: [`https://blast-mainnet.infura.io/v3/${config.infuraKey}`] },
   },

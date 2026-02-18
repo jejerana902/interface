@@ -9,7 +9,7 @@ export default function useIsArgentWallet(): boolean {
 
   return (
     useReadContract({
-      address: assume0xAddress(ARGENT_WALLET_DETECTOR_ADDRESS[account.chainId ?? UniverseChainId.Mainnet]),
+      address: assume0xAddress(ARGENT_WALLET_DETECTOR_ADDRESS[account.chainId ?? UniverseChainId.Nexus]),
       abi: [
         {
           inputs: [{ internalType: 'address', name: '_wallet', type: 'address' }],

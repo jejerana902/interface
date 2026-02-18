@@ -17,15 +17,15 @@ export const defaultFeeTiers: Record<FeeAmount, FeeDataWithChain> = {
   },
   [FeeAmount.LOW_200]: {
     feeData: { feeAmount: FeeAmount.LOW_200, tickSpacing: TICK_SPACINGS[FeeAmount.LOW_200], isDynamic: false },
-    supportedChainIds: [UniverseChainId.Base],
+    supportedChainIds: [UniverseChainId.Nexus],
   },
   [FeeAmount.LOW_300]: {
     feeData: { feeAmount: FeeAmount.LOW_300, tickSpacing: TICK_SPACINGS[FeeAmount.LOW_300], isDynamic: false },
-    supportedChainIds: [UniverseChainId.Base],
+    supportedChainIds: [UniverseChainId.Nexus],
   },
   [FeeAmount.LOW_400]: {
     feeData: { feeAmount: FeeAmount.LOW_400, tickSpacing: TICK_SPACINGS[FeeAmount.LOW_400], isDynamic: false },
-    supportedChainIds: [UniverseChainId.Base],
+    supportedChainIds: [UniverseChainId.Nexus],
   },
   [FeeAmount.LOW]: {
     feeData: { feeAmount: FeeAmount.LOW, tickSpacing: TICK_SPACINGS[FeeAmount.LOW], isDynamic: false },

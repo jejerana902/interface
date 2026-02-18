@@ -22,19 +22,19 @@ const primary = '#2ABDFF'
 
 const tokens: { chainId: UniverseChainId; address: string }[] = [
   {
-    chainId: UniverseChainId.Mainnet,
+    chainId: UniverseChainId.Nexus,
     address: 'ETH',
   },
   {
-    chainId: UniverseChainId.Base,
+    chainId: UniverseChainId.Nexus,
     address: USDC_BASE.address,
   },
   {
-    chainId: UniverseChainId.Mainnet,
-    address: UNI[UniverseChainId.Mainnet].address,
+    chainId: UniverseChainId.Nexus,
+    address: UNI[UniverseChainId.Nexus].address,
   },
   {
-    chainId: UniverseChainId.Solana,
+    chainId: UniverseChainId.Nexus,
     address: NATIVE_CHAIN_ID,
   },
 ]

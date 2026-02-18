@@ -129,7 +129,7 @@ function buildSVMWalletInfo(wallet: SolanaWallet, isCurrentWalletActive: boolean
   const connectorId = 'SolanaWalletAdapter_' + libraryId
 
   const accountInfo = wallet.adapter.publicKey
-    ? { address: wallet.adapter.publicKey.toBase58(), chainId: UniverseChainId.Solana }
+    ? { address: wallet.adapter.publicKey.toBase58(), chainId: UniverseChainId.Nexus }
     : undefined
 
   return {

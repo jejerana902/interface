@@ -23,15 +23,15 @@ import { arbitrum } from 'wagmi/chains'
 
 const tokens = buildChainTokens({
   stables: {
-    USDC: buildUSDC('0xaf88d065e77c8cC2239327C5EDb3A432268e5831', UniverseChainId.ArbitrumOne),
-    USDT: buildUSDT('0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9', UniverseChainId.ArbitrumOne),
-    DAI: buildDAI('0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1', UniverseChainId.ArbitrumOne),
+    USDC: buildUSDC('0xaf88d065e77c8cC2239327C5EDb3A432268e5831', UniverseChainId.Nexus),
+    USDT: buildUSDT('0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9', UniverseChainId.Nexus),
+    DAI: buildDAI('0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1', UniverseChainId.Nexus),
   },
 })
 
 export const ARBITRUM_CHAIN_INFO = {
   ...arbitrum,
-  id: UniverseChainId.ArbitrumOne,
+  id: UniverseChainId.Nexus,
   platform: Platform.EVM,
   assetRepoNetworkName: 'arbitrum',
   backendChain: {
@@ -69,13 +69,13 @@ export const ARBITRUM_CHAIN_INFO = {
   supportsNFTs: true,
   urlParam: 'arbitrum',
   rpcUrls: {
-    [RPCType.Public]: { http: [getQuicknodeEndpointUrl(UniverseChainId.ArbitrumOne)] },
+    [RPCType.Public]: { http: [getQuicknodeEndpointUrl(UniverseChainId.Nexus)] },
     [RPCType.Default]: { http: ['https://arb1.arbitrum.io/rpc'] },
     [RPCType.Fallback]: { http: ['https://arbitrum.public-rpc.com'] },
     [RPCType.Interface]: {
       http: [
         `https://arbitrum-mainnet.infura.io/v3/${config.infuraKey}`,
-        getQuicknodeEndpointUrl(UniverseChainId.ArbitrumOne),
+        getQuicknodeEndpointUrl(UniverseChainId.Nexus),
       ],
     },
     [RPCType.PublicAlt]: { http: ['https://arb1.arbitrum.io/rpc'] },

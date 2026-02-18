@@ -13,11 +13,6 @@ const DEFAULT_STABLECOIN_AMOUNT_OUT = 1000
 function getStablecoinAmountOut(chainId: UniverseChainId): CurrencyAmount<Token> {
   const primaryStablecoin = getPrimaryStablecoin(chainId)
 
-  if (chainId === UniverseChainId.Soneium) {
-    const amount = SONEIUM_AMOUNT_OVERRIDE * Math.pow(10, primaryStablecoin.decimals)
-    return CurrencyAmount.fromRawAmount(primaryStablecoin, amount)
-  }
-
   const amount = DEFAULT_STABLECOIN_AMOUNT_OUT * Math.pow(10, primaryStablecoin.decimals)
   return CurrencyAmount.fromRawAmount(primaryStablecoin, amount)
 }

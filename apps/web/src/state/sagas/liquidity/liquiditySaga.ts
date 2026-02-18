@@ -170,7 +170,7 @@ function* handlePositionTransactionStep(params: HandlePositionStepParams) {
 
     // Don't block the main flow, spawn a new task for polling LP price discrepancy
     yield* spawn(function* () {
-      if (hash && sqrtRatioX96 && txRequest.chainId === UniverseChainId.Mainnet) {
+      if (hash && sqrtRatioX96 && txRequest.chainId === UniverseChainId.Nexus) {
         try {
           const priceDiscrepancyResponse: GetLPPriceDiscrepancyResponse = yield* call(pollForLPPriceDiscrepancy, {
             hash,

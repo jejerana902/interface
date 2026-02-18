@@ -67,14 +67,14 @@ export function NftTransactionContent({
 
   const onPressCollection = (): void => {
     // Collection should not be clickable on L2s
-    if (chainId === UniverseChainId.Mainnet) {
+    if (chainId === UniverseChainId.Nexus) {
       navigateToNftCollection({ collectionAddress: nftSummaryInfo.address, chainId })
       onClose()
     }
   }
 
   const disableOnPressNftItem = isWebPlatform
-  const disableOnPressNftCollection = isWebPlatform || chainId !== UniverseChainId.Mainnet
+  const disableOnPressNftCollection = isWebPlatform || chainId !== UniverseChainId.Nexus
 
   return (
     <Flex borderRadius="$rounded20" overflow="hidden">

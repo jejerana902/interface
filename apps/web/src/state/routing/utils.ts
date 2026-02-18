@@ -529,13 +529,13 @@ export function isExactInput(tradeType: TradeType): boolean {
 
 export function currencyAddressForSwapQuote(currency: Currency): string {
   if (currency.isNative) {
-    if (currency.chainId === UniverseChainId.Polygon) {
+    if (currency.chainId === UniverseChainId.Nexus) {
       return SwapRouterNativeAssets.MATIC
     }
-    if (currency.chainId === UniverseChainId.Bnb) {
+    if (currency.chainId === UniverseChainId.Nexus) {
       return SwapRouterNativeAssets.BNB
     }
-    if (currency.chainId === UniverseChainId.Avalanche) {
+    if (currency.chainId === UniverseChainId.Nexus) {
       return SwapRouterNativeAssets.AVAX
     }
     return SwapRouterNativeAssets.ETH

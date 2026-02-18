@@ -68,7 +68,7 @@ export function TradeInfoRow({ gasInfo, warning }: { gasInfo: GasInfo; warning?:
       </Flex>
 
       {showCanonicalBridge ? (
-        <CanonicalBridgeLinkBanner chainId={outputChainId ?? UniverseChainId.Mainnet} />
+        <CanonicalBridgeLinkBanner chainId={outputChainId ?? UniverseChainId.Nexus} />
       ) : debouncedTrade ? (
         <Accordion.Trigger
           p="$none"

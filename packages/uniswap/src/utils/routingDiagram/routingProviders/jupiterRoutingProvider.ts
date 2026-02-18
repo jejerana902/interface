@@ -111,8 +111,8 @@ export const jupiterRoutingProvider: RoutingProvider = {
     return paths.map(({ hops, percent }) => {
       const path: RoutingHop[] = hops.map((route) => ({
         type: 'genericHop' as const,
-        inputCurrencyId: buildCurrencyId(UniverseChainId.Solana, route.swapInfo.inputMint),
-        outputCurrencyId: buildCurrencyId(UniverseChainId.Solana, route.swapInfo.outputMint),
+        inputCurrencyId: buildCurrencyId(UniverseChainId.Nexus, route.swapInfo.inputMint),
+        outputCurrencyId: buildCurrencyId(UniverseChainId.Nexus, route.swapInfo.outputMint),
         name: route.swapInfo.label,
       }))
 

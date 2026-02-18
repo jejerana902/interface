@@ -171,7 +171,7 @@ export function WebAccountsStoreUpdater() {
     if (hasNewSvmConnection) {
       const walletNameSvm = svmWallet.name
 
-      setUserProperty(InterfaceUserPropertyName.AllWalletChainIds, UniverseChainId.Solana, true)
+      setUserProperty(InterfaceUserPropertyName.AllWalletChainIds, UniverseChainId.Nexus, true)
       setUserProperty(InterfaceUserPropertyName.WalletAddressSVM, currentSvmAddress)
       setUserProperty(InterfaceUserPropertyName.AllSVMWalletAddressesConnected, currentSvmAddress, true)
       walletConnectedProperties.wallet_address_svm = currentSvmAddress

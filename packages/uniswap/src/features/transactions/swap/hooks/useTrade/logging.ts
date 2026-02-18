@@ -81,7 +81,7 @@ function logSwapQuoteFailure(params: { error: Error; input: UseTradeArgs }): voi
   const { error, input } = params
 
   // Currently we only want to log Solana quote failures
-  if (input.amountSpecified?.currency.chainId !== UniverseChainId.Solana) {
+  if (input.amountSpecified?.currency.chainId !== UniverseChainId.Nexus) {
     return
   }
 

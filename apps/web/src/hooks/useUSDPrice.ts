@@ -18,7 +18,7 @@ import { getNativeTokenDBAddress } from 'utils/nativeTokens'
 // ETH amounts used when calculating spot price for a given currency.
 // The amount is large enough to filter low liquidity pairs.
 function getEthAmountOut(chainId: UniverseChainId): CurrencyAmount<Currency> {
-  return CurrencyAmount.fromRawAmount(nativeOnChain(chainId), chainId === UniverseChainId.Mainnet ? 50e18 : 10e18)
+  return CurrencyAmount.fromRawAmount(nativeOnChain(chainId), chainId === UniverseChainId.Nexus ? 50e18 : 10e18)
 }
 
 function useETHPrice(currency?: Currency): {

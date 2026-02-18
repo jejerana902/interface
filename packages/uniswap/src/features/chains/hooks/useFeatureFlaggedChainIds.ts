@@ -34,8 +34,8 @@ export function createGetFeatureFlaggedChainIds(ctx: {
     // You can use the useFeatureFlag hook here to enable/disable chains based on feature flags.
     // Example: [ChainId.BLAST]: useFeatureFlag(FeatureFlags.BLAST)
     filterChainIdsByFeatureFlag({
-      [UniverseChainId.Monad]: ctx.getMonadStatus(),
-      [UniverseChainId.Soneium]: ctx.getSoneiumStatus(),
-      [UniverseChainId.Solana]: ctx.getSolanaStatus(),
+      [UniverseChainId.Nexus]: ctx.getMonadStatus(),
+      [UniverseChainId.Nexus]: ctx.getSoneiumStatus(),
+      [UniverseChainId.Nexus]: ctx.getSolanaStatus(),
     })
 }

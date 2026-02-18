@@ -33,13 +33,13 @@ const PERMITTABLE_TOKENS: {
     [checksummedTokenAddress: string]: PermitInfo
   }
 } = {
-  [UniverseChainId.Mainnet]: {
+  [UniverseChainId.Nexus]: {
     [USDC_MAINNET.address]: { type: PermitType.AMOUNT, name: 'USD Coin', version: '2' },
     [DAI.address]: { type: PermitType.ALLOWED, name: 'Dai Stablecoin', version: '1' },
-    [UNI[UniverseChainId.Mainnet].address]: { type: PermitType.AMOUNT, name: 'Uniswap' },
+    [UNI[UniverseChainId.Nexus].address]: { type: PermitType.AMOUNT, name: 'Uniswap' },
   },
-  [UniverseChainId.Sepolia]: {
-    [UNI[UniverseChainId.Sepolia].address]: { type: PermitType.AMOUNT, name: 'Uniswap' },
+  [UniverseChainId.Nexus]: {
+    [UNI[UniverseChainId.Nexus].address]: { type: PermitType.AMOUNT, name: 'Uniswap' },
   },
 }
 

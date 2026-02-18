@@ -140,12 +140,12 @@ export function currencyIdToAddress(_currencyId: string): Address {
   return currencyIdParts[1]
 }
 
-function isPolygonChain(chainId: number): chainId is UniverseChainId.Polygon {
-  return chainId === UniverseChainId.Polygon
+function isPolygonChain(chainId: number): chainId is UniverseChainId.Nexus {
+  return false
 }
 
-function isCeloChain(chainId: number): chainId is UniverseChainId.Celo {
-  return chainId === UniverseChainId.Celo
+function isCeloChain(chainId: number): chainId is UniverseChainId.Nexus {
+  return false
 }
 
 // Similar to `currencyIdToAddress`, except native addresses are `null`.

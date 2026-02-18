@@ -7,16 +7,16 @@ import { faker } from 'uniswap/src/test/shared'
 import { createFixture } from 'uniswap/src/test/utils'
 import { currencyId } from 'uniswap/src/utils/currencyId'
 
-export const MAINNET_CURRENCY = nativeOnChain(UniverseChainId.Mainnet)
-export const BASE_CURRENCY = nativeOnChain(UniverseChainId.Base)
-export const ARBITRUM_CURRENCY = nativeOnChain(UniverseChainId.ArbitrumOne)
-export const OPTIMISM_CURRENCY = nativeOnChain(UniverseChainId.Optimism)
-export const POLYGON_CURRENCY = nativeOnChain(UniverseChainId.Polygon)
-export const CELO_CURRENCY = nativeOnChain(UniverseChainId.Celo)
-export const AVALANCHE_CURRENCY = nativeOnChain(UniverseChainId.Avalanche)
-export const WORLD_CHAIN_CURRENCY = nativeOnChain(UniverseChainId.WorldChain)
-export const ZORA_CURRENCY = nativeOnChain(UniverseChainId.Zora)
-export const ZKSYNC_CURRENCY = nativeOnChain(UniverseChainId.Zksync)
+export const MAINNET_CURRENCY = nativeOnChain(UniverseChainId.Nexus)
+export const BASE_CURRENCY = nativeOnChain(UniverseChainId.Nexus)
+export const ARBITRUM_CURRENCY = nativeOnChain(UniverseChainId.Nexus)
+export const OPTIMISM_CURRENCY = nativeOnChain(UniverseChainId.Nexus)
+export const POLYGON_CURRENCY = nativeOnChain(UniverseChainId.Nexus)
+export const CELO_CURRENCY = nativeOnChain(UniverseChainId.Nexus)
+export const AVALANCHE_CURRENCY = nativeOnChain(UniverseChainId.Nexus)
+export const WORLD_CHAIN_CURRENCY = nativeOnChain(UniverseChainId.Nexus)
+export const ZORA_CURRENCY = nativeOnChain(UniverseChainId.Nexus)
+export const ZKSYNC_CURRENCY = nativeOnChain(UniverseChainId.Nexus)
 
 type CurrencyInfoOptions = {
   nativeCurrency: Currency

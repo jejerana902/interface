@@ -21,7 +21,7 @@ class WalletError extends Error {
   code?: number
 }
 
-const allowedErc20BalanceAddresses = [USDT.address, DAI.address, WETH_ADDRESS(UniverseChainId.Mainnet)]
+const allowedErc20BalanceAddresses = [USDT.address, DAI.address, WETH_ADDRESS(UniverseChainId.Nexus)]
 
 // Helper to check if error is a timeout
 const isTimeoutError = (error: any): boolean => {
@@ -96,7 +96,7 @@ const createAnvilClient = () => {
     },
     async getPermit2Allowance({ owner, token, spender }: { owner?: Address; token: Address; spender: Address }) {
       const data = await client.readContract({
-        address: assume0xAddress(permit2Address(UniverseChainId.Mainnet)),
+        address: assume0xAddress(permit2Address(UniverseChainId.Nexus)),
         abi: PERMIT2_ABI,
         functionName: 'allowance',
         args: [owner ?? TEST_WALLET_ADDRESS, token, spender],
@@ -119,7 +119,7 @@ const createAnvilClient = () => {
       expiration?: number
     }) {
       await client.writeContract({
-        address: assume0xAddress(permit2Address(UniverseChainId.Mainnet)),
+        address: assume0xAddress(permit2Address(UniverseChainId.Nexus)),
         abi: PERMIT2_ABI,
         functionName: 'approve',
         args: [token, spender, amount, expiration],

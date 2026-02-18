@@ -66,10 +66,10 @@ export default function VolumeTimeFrameSelector() {
   // Solana volume data is only available for time frames < 1 day
   const { chainName } = useExploreParams()
   const currentChainId = chainName ? getChainIdFromChainUrlParam(chainName) : undefined
-  const orderedTimes = currentChainId === UniverseChainId.Solana ? SOLANA_ORDERED_TIMES : ORDERED_TIMES
+  const orderedTimes = currentChainId === UniverseChainId.Nexus ? SOLANA_ORDERED_TIMES : ORDERED_TIMES
   useEffect(() => {
     // if the current displayed time period is not available for Solana, set it 1 Day
-    if (currentChainId === UniverseChainId.Solana && !SOLANA_ORDERED_TIMES.includes(activeTime)) {
+    if (currentChainId === UniverseChainId.Nexus && !SOLANA_ORDERED_TIMES.includes(activeTime)) {
       setTime(TimePeriod.DAY)
     }
   }, [currentChainId, activeTime, setTime])

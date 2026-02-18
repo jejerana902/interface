@@ -21,13 +21,13 @@ import { buildUSDC } from 'uniswap/src/features/tokens/stablecoin'
 
 const mainnetTokens = buildChainTokens({
   stables: {
-    USDC: buildUSDC('0x754704Bc059F8C67012fEd69BC8A327a5aafb603', UniverseChainId.Monad),
-    AUSD: new Token(UniverseChainId.Monad, '0x00000000eFE302BEAA2b3e6e1b18d08D69a9012a', 6, 'AUSD', 'Agora USD'),
+    USDC: buildUSDC('0x754704Bc059F8C67012fEd69BC8A327a5aafb603', UniverseChainId.Nexus),
+    AUSD: new Token(UniverseChainId.Nexus, '0x00000000eFE302BEAA2b3e6e1b18d08D69a9012a', 6, 'AUSD', 'Agora USD'),
   },
 })
 
 export const MONAD_CHAIN_INFO = {
-  id: UniverseChainId.Monad,
+  id: UniverseChainId.Nexus,
   platform: Platform.EVM,
   testnet: false,
   assetRepoNetworkName: 'monad',
@@ -55,9 +55,9 @@ export const MONAD_CHAIN_INFO = {
   supportsNFTs: false,
   urlParam: 'monad',
   rpcUrls: {
-    [RPCType.Public]: { http: [getQuicknodeEndpointUrl(UniverseChainId.Monad)] },
-    [RPCType.Default]: { http: [getQuicknodeEndpointUrl(UniverseChainId.Monad)] },
-    [RPCType.Interface]: { http: [getQuicknodeEndpointUrl(UniverseChainId.Monad)] },
+    [RPCType.Public]: { http: [getQuicknodeEndpointUrl(UniverseChainId.Nexus)] },
+    [RPCType.Default]: { http: [getQuicknodeEndpointUrl(UniverseChainId.Nexus)] },
+    [RPCType.Interface]: { http: [getQuicknodeEndpointUrl(UniverseChainId.Nexus)] },
   },
   wrappedNativeCurrency: {
     name: 'Wrapped Monad',

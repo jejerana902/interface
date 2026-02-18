@@ -602,7 +602,7 @@ function RewardAprCell({ apr, isLoading, rewardApr, token0CurrencyId, token1Curr
         <TableText color="$accent1" mr="$spacing4">
           {formatPercent(rewardApr)}
         </TableText>
-        <CurrencyLogo currency={UNI[UniverseChainId.Mainnet]} size={16} />
+        <CurrencyLogo currency={UNI[UniverseChainId.Nexus]} size={16} />
       </Cell>
     </MouseoverTooltip>
   )

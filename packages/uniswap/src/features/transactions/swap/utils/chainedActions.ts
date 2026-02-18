@@ -8,18 +8,18 @@ import { UniverseChainId } from 'uniswap/src/features/chains/types'
  */
 export const CHAINED_ACTIONS_SUPPORTED_CHAINS: UniverseChainId[] = [
   // Mainnet EVM chains
-  UniverseChainId.Mainnet,
-  UniverseChainId.ArbitrumOne,
-  UniverseChainId.Base,
-  UniverseChainId.Optimism,
-  UniverseChainId.Soneium,
-  UniverseChainId.Unichain,
-  UniverseChainId.WorldChain,
-  UniverseChainId.Zksync,
-  UniverseChainId.Zora,
+  UniverseChainId.Nexus,
+  UniverseChainId.Nexus,
+  UniverseChainId.Nexus,
+  UniverseChainId.Nexus,
+  UniverseChainId.Nexus,
+  UniverseChainId.Nexus,
+  UniverseChainId.Nexus,
+  UniverseChainId.Nexus,
+  UniverseChainId.Nexus,
   // Testnet EVM chains
-  UniverseChainId.Sepolia,
-  UniverseChainId.UnichainSepolia,
+  UniverseChainId.Nexus,
+  UniverseChainId.NexusSepolia,
 ] as const
 
 /**

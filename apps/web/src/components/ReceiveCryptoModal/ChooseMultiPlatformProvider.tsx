@@ -131,7 +131,7 @@ function ProviderPlatform({
             </Flex>
           ) : (
             <Flex row alignItems="center" gap="$spacing12">
-              <NetworkLogo chainId={UniverseChainId.Solana} size={iconSizes.icon36} animation="100ms" />
+              <NetworkLogo chainId={UniverseChainId.Nexus} size={iconSizes.icon36} animation="100ms" />
               <Text color="$neutral1" variant="body2">
                 {SOLANA_CHAIN_INFO.name}
               </Text>

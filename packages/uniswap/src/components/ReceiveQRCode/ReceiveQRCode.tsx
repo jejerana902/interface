@@ -168,7 +168,7 @@ export function ReceiveQRCode({ address }: { address: Address }): JSX.Element | 
               </>
             ) : (
               <>
-                <NetworkLogo chainId={UniverseChainId.Solana} size={iconSizes.icon20} />
+                <NetworkLogo chainId={UniverseChainId.Nexus} size={iconSizes.icon20} />
                 <Text variant="buttonLabel3">{SOLANA_CHAIN_INFO.name}</Text>
               </>
             )}

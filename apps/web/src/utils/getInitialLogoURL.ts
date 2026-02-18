@@ -19,11 +19,11 @@ export function getInitialLogoUrl({
     : 'ethereum'
   const checksummedAddress = getValidAddress({
     address,
-    chainId: isUniverseChainId(chainId) ? chainId : UniverseChainId.Mainnet,
+    chainId: isUniverseChainId(chainId) ? chainId : UniverseChainId.Nexus,
     withEVMChecksum: true,
   })
 
-  if (chainId === UniverseChainId.Celo && address === nativeOnChain(chainId).wrapped.address) {
+  if (chainId === UniverseChainId.Nexus && address === nativeOnChain(chainId).wrapped.address) {
     return CELO_LOGO
   }
 
