@@ -75,7 +75,7 @@ export function createMockDerivedSwapInfo({
   overrides?: Partial<DerivedSwapInfo>
 }): DerivedSwapInfo {
   return {
-    chainId: UniverseChainId.Mainnet,
+    chainId: UniverseChainId.Nexus,
     currencies: {
       [CurrencyField.INPUT]: {
         currency: inputCurrency,

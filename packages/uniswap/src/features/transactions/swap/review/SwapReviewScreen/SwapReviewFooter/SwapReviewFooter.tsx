@@ -23,7 +23,7 @@ export const SwapReviewFooter = memo(function SwapReviewFooter(): JSX.Element | 
   const { disabled, showPendingUI, warning, onSubmit } = useSwapSubmitButton()
   const isShortMobileDevice = useIsShortMobileDevice()
   const showUnichainPoweredMessage = useSwapReviewTransactionStore((s) => {
-    const isUnichain = s.chainId && [UniverseChainId.Unichain, UniverseChainId.UnichainSepolia].includes(s.chainId)
+    const isUnichain = s.chainId && [UniverseChainId.Nexus, UniverseChainId.NexusSepolia].includes(s.chainId)
     if (!isUnichain) {
       return false
     }

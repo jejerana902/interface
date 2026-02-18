@@ -12,54 +12,17 @@ export const DEFAULT_MS_BEFORE_WARNING = ONE_MINUTE_MS * 10
 
 // Source: https://marketplace.quicknode.com/chains_and_networks
 export function getQuicknodeChainId(chainId: UniverseChainId): string {
-  switch (chainId) {
-    case UniverseChainId.Mainnet:
-      return ''
-    case UniverseChainId.ArbitrumOne:
-      return 'arbitrum-mainnet'
-    case UniverseChainId.Avalanche:
-      return 'avalanche-mainnet'
-    case UniverseChainId.Base:
-      return 'base-mainnet'
-    case UniverseChainId.Blast:
-      return 'blast-mainnet'
-    case UniverseChainId.Bnb:
-      return 'bsc'
-    case UniverseChainId.Celo:
-      return 'celo-mainnet'
-    case UniverseChainId.Monad:
-      return 'monad-mainnet'
-    case UniverseChainId.Optimism:
-      return 'optimism'
-    case UniverseChainId.Polygon:
-      return 'matic'
-    case UniverseChainId.Sepolia:
-      return 'ethereum-sepolia'
-    case UniverseChainId.Solana:
-      return 'solana-mainnet'
-    case UniverseChainId.Unichain:
-      return 'unichain-mainnet'
-    case UniverseChainId.UnichainSepolia:
-      return 'unichain-sepolia'
-    case UniverseChainId.WorldChain:
-      return 'worldchain-mainnet'
-    case UniverseChainId.Zksync:
-      return 'zksync-mainnet'
-    case UniverseChainId.Zora:
-      return 'zora-mainnet'
-    default:
-      throw new Error(`Chain ${chainId} does not have a corresponding QuickNode chain ID`)
+  // Nexus is not on QuickNode, return empty string
+  if (chainId === UniverseChainId.Nexus) {
+    return ''
   }
+  throw new Error(`Chain ${chainId} does not have a corresponding QuickNode chain ID`)
 }
 
 // If chain requires a path suffix
 export function getQuicknodeChainIdPathSuffix(chainId: UniverseChainId): string {
-  switch (chainId) {
-    case UniverseChainId.Avalanche:
-      return '/ext/bc/C/rpc' // https://www.quicknode.com/docs/avalanche#overview
-    default:
-      return ''
-  }
+  // Nexus doesn't need a path suffix
+  return ''
 }
 
 export function getQuicknodeEndpointUrl(chainId: UniverseChainId): string {

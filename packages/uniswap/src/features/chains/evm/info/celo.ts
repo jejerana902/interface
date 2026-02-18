@@ -18,13 +18,13 @@ import { celo } from 'wagmi/chains'
 
 const tokens = buildChainTokens({
   stables: {
-    USDC: buildUSDC('0xceba9300f2b948710d2653dd7b07f33a8b32118c', UniverseChainId.Celo),
+    USDC: buildUSDC('0xceba9300f2b948710d2653dd7b07f33a8b32118c', UniverseChainId.Nexus),
   },
 })
 
 export const CELO_CHAIN_INFO = {
   ...celo,
-  id: UniverseChainId.Celo,
+  id: UniverseChainId.Nexus,
   platform: Platform.EVM,
   assetRepoNetworkName: 'celo',
   backendChain: {
@@ -61,7 +61,7 @@ export const CELO_CHAIN_INFO = {
   supportsNFTs: false,
   urlParam: 'celo',
   rpcUrls: {
-    [RPCType.Public]: { http: [getQuicknodeEndpointUrl(UniverseChainId.Celo)] },
+    [RPCType.Public]: { http: [getQuicknodeEndpointUrl(UniverseChainId.Nexus)] },
     [RPCType.Default]: { http: [`https://forno.celo.org`] },
     [RPCType.Interface]: { http: [`https://celo-mainnet.infura.io/v3/${config.infuraKey}`] },
   },

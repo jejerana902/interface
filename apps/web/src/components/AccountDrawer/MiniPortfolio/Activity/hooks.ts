@@ -83,7 +83,7 @@ export function useCancelOrdersGasEstimate(orders?: UniswapXOrderDetails[]): Can
   const placeholderTransaction = useMemo<TransactionDetails>(() => {
     return {
       id: 'placeholder',
-      chainId: UniverseChainId.Mainnet,
+      chainId: UniverseChainId.Nexus,
       from: '0x0000000000000000000000000000000000000000',
       typeInfo: {
         type: TransactionType.Unknown,

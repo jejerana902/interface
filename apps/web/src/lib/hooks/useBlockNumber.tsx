@@ -54,10 +54,10 @@ export function BlockNumberProvider({ children }: PropsWithChildren) {
     setChainBlock((chainBlock) => {
       if (chainBlock.chainId === chainId) {
         if (!chainBlock.block || chainBlock.block < block) {
-          const mainnetBlock = chainId === UniverseChainId.Mainnet ? block : chainBlock.mainnetBlock
+          const mainnetBlock = chainId === UniverseChainId.Nexus ? block : chainBlock.mainnetBlock
           return { chainId, block, mainnetBlock }
         }
-      } else if (chainId === UniverseChainId.Mainnet) {
+      } else if (chainId === UniverseChainId.Nexus) {
         if (!chainBlock.mainnetBlock || chainBlock.mainnetBlock < block) {
           return { ...chainBlock, mainnetBlock: block }
         }
@@ -86,9 +86,9 @@ export function BlockNumberProvider({ children }: PropsWithChildren) {
   }, [provider, windowVisible, onChainBlock, multicallChainId])
   // Poll once for the mainnet block number using the network provider.
   useEffect(() => {
-    RPC_PROVIDERS[UniverseChainId.Mainnet]
+    RPC_PROVIDERS[UniverseChainId.Nexus]
       .getBlockNumber()
-      .then((block) => onChainBlock(UniverseChainId.Mainnet, block))
+      .then((block) => onChainBlock(UniverseChainId.Nexus, block))
       // swallow errors - it's ok if this fails, as we'll try again if we activate mainnet
       .catch(() => undefined)
   }, [onChainBlock])

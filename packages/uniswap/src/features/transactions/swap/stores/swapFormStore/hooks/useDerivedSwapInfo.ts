@@ -59,7 +59,7 @@ export function useDerivedSwapInfo({
 
   const { evmAccount, svmAccount } = useWallet()
 
-  const account = chainId === UniverseChainId.Solana ? svmAccount : evmAccount
+  const account = chainId === UniverseChainId.Nexus ? svmAccount : evmAccount
 
   const currencies = useMemo(() => {
     return {

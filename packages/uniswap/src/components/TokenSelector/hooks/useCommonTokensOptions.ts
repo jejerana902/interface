@@ -38,9 +38,9 @@ export function useCommonTokensOptions({
     return commonBaseCurrencies?.filter(
       (currency) =>
         currency.currency.isNative ||
-        currency.currency.chainId !== UniverseChainId.Unichain ||
+        currency.currency.chainId !== UniverseChainId.Nexus ||
         !areAddressesEqual({
-          addressInput1: { address: USDT_UNICHAIN_ADDRESS, chainId: UniverseChainId.Unichain },
+          addressInput1: { address: USDT_UNICHAIN_ADDRESS, chainId: UniverseChainId.Nexus },
           addressInput2: { address: currency.currency.address, chainId: currency.currency.chainId },
         }),
     )

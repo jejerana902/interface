@@ -66,10 +66,10 @@ function BidForm({ tokenColor, onBack }: { tokenColor?: ColorTokens; onBack: () 
     }
   `
 
-  const accountAddress = useActiveAddress(chainId ?? UniverseChainId.Mainnet)
+  const accountAddress = useActiveAddress(chainId ?? UniverseChainId.Nexus)
 
   const durationRemaining = useDurationRemaining(chainId as EVMUniverseChainId, endBlock)
-  const bidCurrencyInfo = useCurrencyInfo(buildCurrencyId(chainId ?? UniverseChainId.Mainnet, bidTokenAddress ?? ''))
+  const bidCurrencyInfo = useCurrencyInfo(buildCurrencyId(chainId ?? UniverseChainId.Nexus, bidTokenAddress ?? ''))
   const currencyBalance = useCurrencyBalance(accountAddress, bidCurrencyInfo?.currency)
 
   // Budget input (top one)

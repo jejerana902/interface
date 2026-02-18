@@ -43,7 +43,7 @@ export const PortfolioOverviewTables = memo(function PortfolioOverviewTables({
         )}
       </Flex>
       <Flex width={OVERVIEW_RIGHT_COLUMN_WIDTH} gap="$spacing40" $xl={{ width: '100%' }}>
-        {portfolioAddresses.evmAddress && (!chainId || chainId === UniverseChainId.Mainnet) && (
+        {portfolioAddresses.evmAddress && (!chainId || chainId === UniverseChainId.Nexus) && (
           <OpenLimitsTable account={portfolioAddresses.evmAddress} maxLimits={MAX_LIMITS_ROWS} />
         )}
         <MiniActivityTable maxActivities={MAX_ACTIVITY_ROWS} activityData={activityData} />

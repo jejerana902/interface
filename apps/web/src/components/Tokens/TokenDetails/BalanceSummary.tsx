@@ -32,7 +32,7 @@ interface BalanceProps {
 }
 const Balance = ({
   currency,
-  chainId = UniverseChainId.Mainnet,
+  chainId = UniverseChainId.Nexus,
   fetchedBalance,
   alignLeft = false,
   onClick,

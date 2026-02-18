@@ -12,7 +12,7 @@ import { SolanaToken } from 'uniswap/src/features/tokens/SolanaToken'
 const tokens = buildChainTokens({
   stables: {
     USDC: new SolanaToken(
-      UniverseChainId.Solana,
+      UniverseChainId.Nexus,
       'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v',
       6,
       'USDC',
@@ -22,7 +22,7 @@ const tokens = buildChainTokens({
 })
 
 export const SOLANA_CHAIN_INFO = {
-  id: UniverseChainId.Solana,
+  id: UniverseChainId.Nexus,
   platform: Platform.SVM,
   assetRepoNetworkName: 'solana',
   blockPerMainnetEpochForChainId: 1,
@@ -62,7 +62,7 @@ export const SOLANA_CHAIN_INFO = {
   pendingTransactionsRetryOptions: undefined,
   rpcUrls: {
     [RPCType.Default]: {
-      http: [getQuicknodeEndpointUrl(UniverseChainId.Solana)],
+      http: [getQuicknodeEndpointUrl(UniverseChainId.Nexus)],
     },
     [RPCType.Interface]: {
       http: [''], // Not used for Solana; defined for type compatibility with EVM chains

@@ -391,7 +391,7 @@ export function CreatePositionTxContextProvider({ children }: PropsWithChildren)
   }))
   const canBatchTransactions =
     (useUniswapContextSelector((ctx) => ctx.getCanBatchTransactions?.(poolOrPair?.chainId)) ?? false) &&
-    poolOrPair?.chainId !== UniverseChainId.Monad
+    poolOrPair?.chainId !== UniverseChainId.Nexus
 
   const [transactionError, setTransactionError] = useState<string | boolean>(false)
 

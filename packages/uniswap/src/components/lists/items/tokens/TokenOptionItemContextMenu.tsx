@@ -155,7 +155,7 @@ function _TokenOptionItemContextMenu({
   const dropdownOptions: MenuOptionItem[] = useMemo(() => {
     const options: MenuOptionItem[] = []
 
-    const isSolanaToken = currencyIdToChain(id) === UniverseChainId.Solana
+    const isSolanaToken = currencyIdToChain(id) === UniverseChainId.Nexus
 
     if (actions.includes(TokenContextMenuAction.CopyAddress)) {
       if (isWebPlatform) {

@@ -92,7 +92,7 @@ function* updateAppState({
     from,
     typeInfo,
     hash,
-    chainId: UniverseChainId.Solana,
+    chainId: UniverseChainId.Nexus,
     routing: TradingApi.Routing.JUPITER,
     status: TransactionStatus.Success,
     addedTime: Date.now(),

@@ -58,7 +58,7 @@ export function isL2ChainId(chainId?: UniverseChainId): boolean {
 }
 
 export function isMainnetChainId(chainId?: UniverseChainId): boolean {
-  return chainId === UniverseChainId.Mainnet || chainId === UniverseChainId.Sepolia
+  return chainId === UniverseChainId.Nexus
 }
 
 export function toGraphQLChain(chainId: UniverseChainId): GqlChainId {
@@ -66,43 +66,11 @@ export function toGraphQLChain(chainId: UniverseChainId): GqlChainId {
 }
 
 export function fromGraphQLChain(chain: GraphQLApi.Chain | string | undefined): UniverseChainId | null {
+  // Since we only support Nexus now, return Nexus for Ethereum (as placeholder) or null for others
   switch (chain) {
     case GraphQLApi.Chain.Ethereum:
-      return UniverseChainId.Mainnet
-    case GraphQLApi.Chain.Arbitrum:
-      return UniverseChainId.ArbitrumOne
-    case GraphQLApi.Chain.Avalanche:
-      return UniverseChainId.Avalanche
-    case GraphQLApi.Chain.Base:
-      return UniverseChainId.Base
-    case GraphQLApi.Chain.Bnb:
-      return UniverseChainId.Bnb
-    case GraphQLApi.Chain.Blast:
-      return UniverseChainId.Blast
-    case GraphQLApi.Chain.Celo:
-      return UniverseChainId.Celo
-    case GraphQLApi.Chain.Monad:
-      return UniverseChainId.Monad
-    case GraphQLApi.Chain.Optimism:
-      return UniverseChainId.Optimism
-    case GraphQLApi.Chain.Polygon:
-      return UniverseChainId.Polygon
     case GraphQLApi.Chain.EthereumSepolia:
-      return UniverseChainId.Sepolia
-    case GraphQLApi.Chain.Unichain:
-      return UniverseChainId.Unichain
-    case GraphQLApi.Chain.Solana:
-      return UniverseChainId.Solana
-    case GraphQLApi.Chain.Soneium:
-      return UniverseChainId.Soneium
-    case GraphQLApi.Chain.AstrochainSepolia:
-      return UniverseChainId.UnichainSepolia
-    case GraphQLApi.Chain.Worldchain:
-      return UniverseChainId.WorldChain
-    case GraphQLApi.Chain.Zksync:
-      return UniverseChainId.Zksync
-    case GraphQLApi.Chain.Zora:
-      return UniverseChainId.Zora
+      return UniverseChainId.Nexus
   }
 
   return null
@@ -113,85 +81,16 @@ export function getPollingIntervalByBlocktime(chainId?: UniverseChainId): Pollin
 }
 
 export function fromUniswapWebAppLink(network: string | null): UniverseChainId {
-  switch (network) {
-    case GraphQLApi.Chain.Ethereum.toLowerCase():
-      return UniverseChainId.Mainnet
-    case GraphQLApi.Chain.Arbitrum.toLowerCase():
-      return UniverseChainId.ArbitrumOne
-    case GraphQLApi.Chain.Avalanche.toLowerCase():
-      return UniverseChainId.Avalanche
-    case GraphQLApi.Chain.Base.toLowerCase():
-      return UniverseChainId.Base
-    case GraphQLApi.Chain.Blast.toLowerCase():
-      return UniverseChainId.Blast
-    case GraphQLApi.Chain.Bnb.toLowerCase():
-      return UniverseChainId.Bnb
-    case GraphQLApi.Chain.Celo.toLowerCase():
-      return UniverseChainId.Celo
-    case GraphQLApi.Chain.Monad.toLowerCase():
-      return UniverseChainId.Monad
-    case GraphQLApi.Chain.Optimism.toLowerCase():
-      return UniverseChainId.Optimism
-    case GraphQLApi.Chain.Polygon.toLowerCase():
-      return UniverseChainId.Polygon
-    case GraphQLApi.Chain.EthereumSepolia.toLowerCase():
-      return UniverseChainId.Sepolia
-    case GraphQLApi.Chain.Unichain.toLowerCase():
-      return UniverseChainId.Unichain
-    case GraphQLApi.Chain.Soneium.toLowerCase():
-      return UniverseChainId.Soneium
-    case GraphQLApi.Chain.AstrochainSepolia.toLowerCase():
-      return UniverseChainId.UnichainSepolia
-    case GraphQLApi.Chain.Worldchain.toLowerCase():
-      return UniverseChainId.WorldChain
-    case GraphQLApi.Chain.Zksync.toLowerCase():
-      return UniverseChainId.Zksync
-    case GraphQLApi.Chain.Zora.toLowerCase():
-      return UniverseChainId.Zora
-    default:
-      throw new Error(`Network "${network}" can not be mapped`)
-  }
+  // Default to Nexus for any network parameter
+  return UniverseChainId.Nexus
 }
 
 export function toUniswapWebAppLink(chainId: UniverseChainId): string | null {
-  switch (chainId) {
-    case UniverseChainId.Mainnet:
-      return GraphQLApi.Chain.Ethereum.toLowerCase()
-    case UniverseChainId.ArbitrumOne:
-      return GraphQLApi.Chain.Arbitrum.toLowerCase()
-    case UniverseChainId.Avalanche:
-      return GraphQLApi.Chain.Avalanche.toLowerCase()
-    case UniverseChainId.Base:
-      return GraphQLApi.Chain.Base.toLowerCase()
-    case UniverseChainId.Blast:
-      return GraphQLApi.Chain.Blast.toLowerCase()
-    case UniverseChainId.Bnb:
-      return GraphQLApi.Chain.Bnb.toLowerCase()
-    case UniverseChainId.Celo:
-      return GraphQLApi.Chain.Celo.toLowerCase()
-    case UniverseChainId.Monad:
-      return GraphQLApi.Chain.Monad.toLowerCase()
-    case UniverseChainId.Optimism:
-      return GraphQLApi.Chain.Optimism.toLowerCase()
-    case UniverseChainId.Polygon:
-      return GraphQLApi.Chain.Polygon.toLowerCase()
-    case UniverseChainId.Sepolia:
-      return GraphQLApi.Chain.EthereumSepolia.toLowerCase()
-    case UniverseChainId.Unichain:
-      return GraphQLApi.Chain.Unichain.toLowerCase()
-    case UniverseChainId.Soneium:
-      return GraphQLApi.Chain.Soneium.toLowerCase()
-    case UniverseChainId.UnichainSepolia:
-      return GraphQLApi.Chain.AstrochainSepolia.toLowerCase()
-    case UniverseChainId.WorldChain:
-      return GraphQLApi.Chain.Worldchain.toLowerCase()
-    case UniverseChainId.Zksync:
-      return GraphQLApi.Chain.Zksync.toLowerCase()
-    case UniverseChainId.Zora:
-      return GraphQLApi.Chain.Zora.toLowerCase()
-    default:
-      throw new Error(`ChainID "${chainId}" can not be mapped`)
+  // Only support Nexus, return 'nexus' as URL param
+  if (chainId === UniverseChainId.Nexus) {
+    return 'nexus'
   }
+  return null
 }
 
 export function filterChainIdsByFeatureFlag(
@@ -275,12 +174,8 @@ function getDefaultChainId({
   platform?: Platform
   isTestnetModeEnabled: boolean
 }): UniverseChainId {
-  if (platform === Platform.SVM) {
-    // TODO(Solana): is there a Solana testnet we can return here?
-    return UniverseChainId.Solana
-  }
-
-  return isTestnetModeEnabled ? UniverseChainId.Sepolia : UniverseChainId.Mainnet
+  // Always return Nexus as it's our only supported chain
+  return UniverseChainId.Nexus
 }
 
 /** Returns all stablecoins for a given chainId. */

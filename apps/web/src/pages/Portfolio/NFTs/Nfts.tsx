@@ -87,7 +87,7 @@ export function PortfolioNfts(): JSX.Element {
   const chainFilterEmptyState = useMemo(() => {
     if (!selectedChainId) {
       if (isSolanaOnlyWallet) {
-        const solanaChainName = getChainLabel(UniverseChainId.Solana)
+        const solanaChainName = getChainLabel(UniverseChainId.Nexus)
         const title = t('tokens.nfts.list.notSupported.title', { chainName: solanaChainName })
         return <NftsListEmptyState description={null} title={title} />
       }

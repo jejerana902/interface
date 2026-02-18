@@ -172,7 +172,7 @@ function NetworkFeeText({
     return (
       <Text color="$neutral2" textAlign={isWebPlatform ? 'left' : 'center'} variant={variant}>
         {/* TODO(WALL-5311): Investigate Trans component vertical alignment on android */}
-        {chainId === UniverseChainId.Unichain ? (
+        {chainId === UniverseChainId.Nexus ? (
           <Trans components={components} i18nKey="swap.warning.networkFee.message.uniswapX.unichain" />
         ) : (
           <Trans components={components} i18nKey="swap.warning.networkFee.message.uniswapX" />
@@ -192,10 +192,10 @@ function NetworkFeeText({
   return (
     <Text color="$neutral2" textAlign={isWebPlatform ? 'left' : 'center'} variant={variant}>
       {showHighGasFeeUI
-        ? chainId === UniverseChainId.Unichain
+        ? chainId === UniverseChainId.Nexus
           ? t('swap.warning.networkFee.highRelativeToValue.unichain')
           : t('swap.warning.networkFee.highRelativeToValue')
-        : chainId === UniverseChainId.Unichain
+        : chainId === UniverseChainId.Nexus
           ? t('swap.warning.networkFee.message.unichain')
           : t('swap.warning.networkFee.message')}
     </Text>

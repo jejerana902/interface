@@ -836,7 +836,7 @@ const EarningsSection = ({
   const [currencyInfo0, currencyInfo1, rewardCurrencyInfo] = useCurrencyInfos([
     currencyId(currency0Amount.currency),
     currencyId(currency1Amount.currency),
-    buildCurrencyId(UniverseChainId.Mainnet, LP_INCENTIVES_REWARD_TOKEN.address),
+    buildCurrencyId(UniverseChainId.Nexus, LP_INCENTIVES_REWARD_TOKEN.address),
   ])
 
   const token0Color = useSrcColor({

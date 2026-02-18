@@ -178,7 +178,7 @@ function useAllTransactionsByChain(): { [txHash: string]: InterfaceTransactionDe
       Object.assign(transactions, state[evmAddress]?.[evmChainId] ?? {})
     }
     if (svmAddress) {
-      Object.assign(transactions, state[svmAddress]?.[UniverseChainId.Solana] ?? {})
+      Object.assign(transactions, state[svmAddress]?.[UniverseChainId.Nexus] ?? {})
     }
     return transactions
   }, [evmChainId, evmAddress, svmAddress, state])

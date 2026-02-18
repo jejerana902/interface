@@ -108,7 +108,7 @@ export function useRoutingAPITrade<TTradeType extends TradeType>(
   const isFetching = currentData !== tradeResult || !currentData
 
   return useMemo(() => {
-    if (currencyIn?.chainId === UniverseChainId.Solana || currencyOut?.chainId === UniverseChainId.Solana) {
+    if (currencyIn?.chainId === UniverseChainId.Nexus || currencyOut?.chainId === UniverseChainId.Nexus) {
       // Routing API does not support Solana; we should not show any trade (nor a stale EVM trade, because we skip the query if Solana)
       return {
         state: TradeState.INVALID,

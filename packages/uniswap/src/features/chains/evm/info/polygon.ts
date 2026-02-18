@@ -18,15 +18,15 @@ import { polygon } from 'wagmi/chains'
 
 const tokens = buildChainTokens({
   stables: {
-    USDC: buildUSDC('0x3c499c542cef5e3811e1192ce70d8cc03d5c3359', UniverseChainId.Polygon),
-    USDT: buildUSDT('0xc2132d05d31c914a87c6611c10748aeb04b58e8f', UniverseChainId.Polygon),
-    DAI: buildDAI('0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063', UniverseChainId.Polygon),
+    USDC: buildUSDC('0x3c499c542cef5e3811e1192ce70d8cc03d5c3359', UniverseChainId.Nexus),
+    USDT: buildUSDT('0xc2132d05d31c914a87c6611c10748aeb04b58e8f', UniverseChainId.Nexus),
+    DAI: buildDAI('0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063', UniverseChainId.Nexus),
   },
 })
 
 export const POLYGON_CHAIN_INFO = {
   ...polygon,
-  id: UniverseChainId.Polygon,
+  id: UniverseChainId.Nexus,
   platform: Platform.EVM,
   assetRepoNetworkName: 'polygon',
   blockPerMainnetEpochForChainId: 5,
@@ -59,7 +59,7 @@ export const POLYGON_CHAIN_INFO = {
   networkLayer: NetworkLayer.L1,
   pendingTransactionsRetryOptions: undefined,
   rpcUrls: {
-    [RPCType.Public]: { http: [getQuicknodeEndpointUrl(UniverseChainId.Polygon)] },
+    [RPCType.Public]: { http: [getQuicknodeEndpointUrl(UniverseChainId.Nexus)] },
     [RPCType.PublicAlt]: { http: ['https://polygon-rpc.com/'] },
     [RPCType.Default]: { http: ['https://polygon-rpc.com/'] },
     [RPCType.Interface]: { http: [`https://polygon-mainnet.infura.io/v3/${config.infuraKey}`] },

@@ -72,7 +72,7 @@ export function IncreaseLiquidityTxContextProvider({ children }: PropsWithChildr
   const accountAddress = useActiveAddress(Platform.EVM)
   const canBatchTransactions =
     useUniswapContextSelector((ctx) => ctx.getCanBatchTransactions?.(positionInfo?.chainId)) &&
-    positionInfo?.chainId !== UniverseChainId.Monad
+    positionInfo?.chainId !== UniverseChainId.Nexus
 
   const increaseLiquidityApprovalParams: TradingApi.CheckApprovalLPRequest | undefined = useMemo(() => {
     if (!positionInfo || !accountAddress || !currencyAmounts?.TOKEN0 || !currencyAmounts.TOKEN1) {

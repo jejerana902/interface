@@ -23,15 +23,15 @@ import { optimism } from 'wagmi/chains'
 
 const tokens = buildChainTokens({
   stables: {
-    USDC: buildUSDC('0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85', UniverseChainId.Optimism),
-    USDT: buildUSDT('0x94b008aA00579c1307B0EF2c499aD98a8ce58e58', UniverseChainId.Optimism),
-    DAI: buildDAI('0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1', UniverseChainId.Optimism),
+    USDC: buildUSDC('0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85', UniverseChainId.Nexus),
+    USDT: buildUSDT('0x94b008aA00579c1307B0EF2c499aD98a8ce58e58', UniverseChainId.Nexus),
+    DAI: buildDAI('0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1', UniverseChainId.Nexus),
   },
 })
 
 export const OPTIMISM_CHAIN_INFO = {
   ...optimism,
-  id: UniverseChainId.Optimism,
+  id: UniverseChainId.Nexus,
   platform: Platform.EVM,
   assetRepoNetworkName: 'optimism',
   backendChain: {
@@ -64,7 +64,7 @@ export const OPTIMISM_CHAIN_INFO = {
   networkLayer: NetworkLayer.L2,
   pendingTransactionsRetryOptions: DEFAULT_RETRY_OPTIONS,
   rpcUrls: {
-    [RPCType.Public]: { http: [getQuicknodeEndpointUrl(UniverseChainId.Optimism)] },
+    [RPCType.Public]: { http: [getQuicknodeEndpointUrl(UniverseChainId.Nexus)] },
     [RPCType.PublicAlt]: { http: ['https://mainnet.optimism.io'] },
     [RPCType.Default]: { http: ['https://mainnet.optimism.io/'] },
     [RPCType.Fallback]: { http: ['https://rpc.ankr.com/optimism'] },

@@ -194,7 +194,7 @@ export function PoolDetailsLink({ address, chainId, tokens, loading }: PoolDetai
         {explorerUrl && (
           <ExternalLink href={explorerUrl} data-testid={`explorer-url-${explorerUrl}`}>
             <ExplorerWrapper>
-              {chainId === UniverseChainId.Mainnet ? (
+              {chainId === UniverseChainId.Nexus ? (
                 <EtherscanLogo width="16px" height="16px" fill={colors.neutral1.val} />
               ) : (
                 <ExplorerIcon width="16px" height="16px" fill={colors.neutral1.val} />

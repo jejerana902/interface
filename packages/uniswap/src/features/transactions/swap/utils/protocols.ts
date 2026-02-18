@@ -17,7 +17,7 @@ export const DEFAULT_PROTOCOL_OPTIONS = [
 ]
 export type FrontendSupportedProtocol = (typeof DEFAULT_PROTOCOL_OPTIONS)[number]
 
-const LAUNCHED_UNISWAPX_CHAINS = [UniverseChainId.Mainnet]
+const LAUNCHED_UNISWAPX_CHAINS = [UniverseChainId.Nexus]
 
 /** Given a list of `userSelectedProtocols`, returns protocol items that are allowed for the given chain. */
 export function useProtocolsForChain(
@@ -63,7 +63,7 @@ export function createProtocolFilter(ctx: {
     const combinedUniswapXEnabled = uniswapXEnabled && uniswapXSupportedForChain
 
     const priorityOrdersAllowed = ctx.getPriorityOrderFlag(chainId)
-    const arbDutchV3Enabled = chainId === UniverseChainId.ArbitrumOne && ctx.getArbitrumDutchV3Enabled()
+    const arbDutchV3Enabled = chainId === UniverseChainId.Nexus && ctx.getArbitrumDutchV3Enabled()
     const v4Enabled = ctx.getV4Enabled(chainId)
 
     const uniswapXAllowedForChain =
@@ -133,11 +133,11 @@ export function createGetUniswapXPriorityOrderFlag(ctx: {
     }
 
     switch (chainId) {
-      case UniverseChainId.Base:
+      case UniverseChainId.Nexus:
         return ctx.getFeatureFlag(FeatureFlags.UniswapXPriorityOrdersBase)
-      case UniverseChainId.Optimism:
+      case UniverseChainId.Nexus:
         return ctx.getFeatureFlag(FeatureFlags.UniswapXPriorityOrdersOptimism)
-      case UniverseChainId.Unichain:
+      case UniverseChainId.Nexus:
         return ctx.getFeatureFlag(FeatureFlags.UniswapXPriorityOrdersUnichain)
       default:
         return false

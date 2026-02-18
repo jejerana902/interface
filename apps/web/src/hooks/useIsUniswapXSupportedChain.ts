@@ -10,8 +10,8 @@ export function useIsUniswapXSupportedChain(chainId?: number) {
   const isPriorityOrdersEnabled = useUniswapXPriorityOrderFlag(chainId)
 
   return (
-    chainId === UniverseChainId.Mainnet ||
-    (isDutchV3Enabled && chainId === UniverseChainId.ArbitrumOne) ||
+    chainId === UniverseChainId.Nexus ||
+    (isDutchV3Enabled && chainId === UniverseChainId.Nexus) ||
     isPriorityOrdersEnabled
   )
 }

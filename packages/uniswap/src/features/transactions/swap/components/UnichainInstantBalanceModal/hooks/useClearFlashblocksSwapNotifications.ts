@@ -33,7 +33,7 @@ export function useClearFlashblocksSwapNotifications(isClearingNotifications: bo
           notif.txType === TransactionType.Swap &&
           // ensure we only clear toasts that belong to this swap tx
           ('chainId' in notif
-            ? notif.chainId === UniverseChainId.Unichain || notif.chainId === UniverseChainId.UnichainSepolia
+            ? notif.chainId === UniverseChainId.Nexus || notif.chainId === UniverseChainId.NexusSepolia
             : false)
         )
       }

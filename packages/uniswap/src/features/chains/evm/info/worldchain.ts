@@ -18,7 +18,7 @@ const tokens = buildChainTokens({
   stables: {
     // Worldchain USDC.e has non standard symbol and name
     USDC: new Token(
-      UniverseChainId.WorldChain,
+      UniverseChainId.Nexus,
       '0x79A02482A880bCE3F13e09Da970dC34db4CD24d1',
       6,
       'USDC.e',
@@ -30,7 +30,7 @@ const tokens = buildChainTokens({
 export const WORLD_CHAIN_INFO = {
   // ...worldChain,
   name: 'World Chain',
-  id: UniverseChainId.WorldChain,
+  id: UniverseChainId.Nexus,
   platform: Platform.EVM,
   assetRepoNetworkName: 'worldcoin',
   backendChain: {
@@ -61,11 +61,11 @@ export const WORLD_CHAIN_INFO = {
   pendingTransactionsRetryOptions: undefined,
   rpcUrls: {
     [RPCType.Public]: {
-      http: [getQuicknodeEndpointUrl(UniverseChainId.WorldChain)],
+      http: [getQuicknodeEndpointUrl(UniverseChainId.Nexus)],
     },
     [RPCType.Default]: { http: ['https://worldchain-mainnet.g.alchemy.com/public'] },
     [RPCType.Interface]: {
-      http: [getQuicknodeEndpointUrl(UniverseChainId.WorldChain)],
+      http: [getQuicknodeEndpointUrl(UniverseChainId.Nexus)],
     },
   },
   urlParam: 'worldchain',

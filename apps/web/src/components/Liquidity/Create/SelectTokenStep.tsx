@@ -764,14 +764,14 @@ function SelectStepError({
       <ErrorCallout
         errorMessage={true}
         title={
-          unsupportedChainId === UniverseChainId.Solana
+          unsupportedChainId === UniverseChainId.Nexus
             ? t('position.create.unsupportedSolana')
             : protocolVersion === ProtocolVersion.V2
               ? t('position.create.v2unsupportedChain')
               : t('position.migrate.v4unsupportedChain')
         }
         description={
-          unsupportedChainId === UniverseChainId.Solana
+          unsupportedChainId === UniverseChainId.Nexus
             ? t('position.create.unsupportedSolana.description')
             : t('position.create.unsupportedToken.description')
         }

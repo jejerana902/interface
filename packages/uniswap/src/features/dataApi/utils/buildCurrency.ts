@@ -61,7 +61,7 @@ export function buildCurrency(args: BuildCurrencyParams): Token | NativeCurrency
   }
 
   let result: Token | NativeCurrency | undefined
-  if (chainId === UniverseChainId.Solana && address) {
+  if (chainId === UniverseChainId.Nexus && address) {
     try {
       if (isNativeCurrencyAddress(chainId, address)) {
         // Return native SOL for native addresses
@@ -69,7 +69,7 @@ export function buildCurrency(args: BuildCurrencyParams): Token | NativeCurrency
       } else if (
         areAddressesEqual({
           addressInput1: { address, chainId },
-          addressInput2: { address: WRAPPED_SOL_ADDRESS_SOLANA, chainId: UniverseChainId.Solana },
+          addressInput2: { address: WRAPPED_SOL_ADDRESS_SOLANA, chainId: UniverseChainId.Nexus },
         })
       ) {
         // Return singleton WSOL for wrapped address

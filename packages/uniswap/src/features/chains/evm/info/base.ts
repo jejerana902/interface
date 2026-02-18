@@ -25,7 +25,7 @@ import { base } from 'wagmi/chains'
 
 const tokens = buildChainTokens({
   stables: {
-    USDC: buildUSDC('0x833589fcd6edb6e08f4c7c32d4f71b54bda02913', UniverseChainId.Base),
+    USDC: buildUSDC('0x833589fcd6edb6e08f4c7c32d4f71b54bda02913', UniverseChainId.Nexus),
   },
 })
 
@@ -33,7 +33,7 @@ const LOCAL_BASE_PLAYWRIGHT_RPC_URL = 'http://127.0.0.1:8546'
 
 export const BASE_CHAIN_INFO = {
   ...base,
-  id: UniverseChainId.Base,
+  id: UniverseChainId.Nexus,
   platform: Platform.EVM,
   backendChain: {
     chain: GraphQLApi.Chain.Base as GqlChainId,
@@ -71,7 +71,7 @@ export const BASE_CHAIN_INFO = {
   rpcUrls: isPlaywrightEnv()
     ? getPlaywrightRpcUrls(LOCAL_BASE_PLAYWRIGHT_RPC_URL)
     : {
-        [RPCType.Public]: { http: [getQuicknodeEndpointUrl(UniverseChainId.Base)] },
+        [RPCType.Public]: { http: [getQuicknodeEndpointUrl(UniverseChainId.Nexus)] },
         [RPCType.Default]: { http: ['https://mainnet.base.org/'] },
         [RPCType.Fallback]: { http: ['https://1rpc.io/base', 'https://base.meowrpc.com'] },
         [RPCType.Interface]: { http: [`https://base-mainnet.infura.io/v3/${config.infuraKey}`] },

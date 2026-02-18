@@ -182,7 +182,7 @@ export function Swap({
   })
 
   return (
-    <MultichainContextProvider initialChainId={initialInputChainId ?? UniverseChainId.Mainnet}>
+    <MultichainContextProvider initialChainId={initialInputChainId ?? UniverseChainId.Nexus}>
       <SwapTransactionSettingsStoreContextProvider>
         <SwapAndLimitContextProvider
           initialInputCurrency={initialInputCurrency}

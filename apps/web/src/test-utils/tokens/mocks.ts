@@ -47,7 +47,7 @@ beforeEach(() => {
       return undefined
     }
 
-    if (chainId === UniverseChainId.Mainnet && isNativeCurrencyAddress(chainId, address)) {
+    if (chainId === UniverseChainId.Nexus && isNativeCurrencyAddress(chainId, address)) {
       return NATIVE_INFO.currency
     }
     if (isSameEthAddress(address, DAI.address)) {
@@ -56,7 +56,7 @@ beforeEach(() => {
     if (isSameEthAddress(address, USDC_MAINNET.address)) {
       return USDC_INFO.currency
     }
-    if (isSameEthAddress(address, WETH9[UniverseChainId.Mainnet].address)) {
+    if (isSameEthAddress(address, WETH9[UniverseChainId.Nexus].address)) {
       return WETH_INFO.currency
     }
     if (isSameEthAddress(address, USDT.address)) {
@@ -85,7 +85,7 @@ beforeEach(() => {
     )?.currency
   })
   mocked(useCurrency).mockImplementation(({ address, chainId }: { address?: string; chainId?: UniverseChainId }) => {
-    if (isNativeCurrencyAddress(UniverseChainId.Mainnet, address)) {
+    if (isNativeCurrencyAddress(UniverseChainId.Nexus, address)) {
       return NATIVE_INFO.currency
     }
     if (isSameEthAddress(address, DAI.address)) {
@@ -94,7 +94,7 @@ beforeEach(() => {
     if (isSameEthAddress(address, USDC_MAINNET.address)) {
       return USDC_INFO.currency
     }
-    if (isSameEthAddress(address, WETH9[UniverseChainId.Mainnet].address)) {
+    if (isSameEthAddress(address, WETH9[UniverseChainId.Nexus].address)) {
       return WETH_INFO.currency
     }
     if (isSameEthAddress(address, USDT.address)) {
@@ -118,7 +118,7 @@ beforeEach(() => {
     if (isSameEthAddress(address, TEST_TOKEN_3.address)) {
       return TEST_TOKEN_3_INFO.currency
     }
-    return COMMON_BASES[chainId ?? UniverseChainId.Mainnet].find((base) =>
+    return COMMON_BASES[chainId ?? UniverseChainId.Nexus].find((base) =>
       base.currency.isNative ? base.currency.symbol === 'ETH' : base.currency.address === address,
     )?.currency
   })
@@ -133,7 +133,7 @@ beforeEach(() => {
     if (isSameEthAddress(address, USDC_MAINNET.address)) {
       return USDC_INFO
     }
-    if (isSameEthAddress(address, WETH9[UniverseChainId.Mainnet].address)) {
+    if (isSameEthAddress(address, WETH9[UniverseChainId.Nexus].address)) {
       return WETH_INFO
     }
     if (isSameEthAddress(address, USDT.address)) {

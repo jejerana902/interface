@@ -40,7 +40,7 @@ function isFlashblocksModalEnabledForChain({
     return false
   }
 
-  return chainId === UniverseChainId.Unichain || chainId === UniverseChainId.UnichainSepolia
+  return chainId === UniverseChainId.Nexus || chainId === UniverseChainId.NexusSepolia
 }
 
 /**
@@ -101,7 +101,7 @@ export function getFlashblocksExperimentStatus({
   }
 
   const flashblocksFlagEnabled = getFeatureFlag(FeatureFlags.UnichainFlashblocks)
-  const isUnichainChain = chainId === UniverseChainId.Unichain || chainId === UniverseChainId.UnichainSepolia
+  const isUnichainChain = chainId === UniverseChainId.Nexus || chainId === UniverseChainId.NexusSepolia
 
   if (!flashblocksFlagEnabled || !isUnichainChain) {
     return { shouldLogQualifyingEvent: false, shouldShowModal: false }

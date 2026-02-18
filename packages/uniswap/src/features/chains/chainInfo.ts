@@ -1,19 +1,4 @@
-import { ARBITRUM_CHAIN_INFO } from 'uniswap/src/features/chains/evm/info/arbitrum'
-import { AVALANCHE_CHAIN_INFO } from 'uniswap/src/features/chains/evm/info/avalanche'
-import { BASE_CHAIN_INFO } from 'uniswap/src/features/chains/evm/info/base'
-import { BLAST_CHAIN_INFO } from 'uniswap/src/features/chains/evm/info/blast'
-import { BNB_CHAIN_INFO } from 'uniswap/src/features/chains/evm/info/bnb'
-import { CELO_CHAIN_INFO } from 'uniswap/src/features/chains/evm/info/celo'
-import { MAINNET_CHAIN_INFO, SEPOLIA_CHAIN_INFO } from 'uniswap/src/features/chains/evm/info/mainnet'
-import { MONAD_CHAIN_INFO } from 'uniswap/src/features/chains/evm/info/monad'
-import { OPTIMISM_CHAIN_INFO } from 'uniswap/src/features/chains/evm/info/optimism'
-import { POLYGON_CHAIN_INFO } from 'uniswap/src/features/chains/evm/info/polygon'
-import { SONEIUM_CHAIN_INFO } from 'uniswap/src/features/chains/evm/info/soneium'
-import { UNICHAIN_CHAIN_INFO, UNICHAIN_SEPOLIA_CHAIN_INFO } from 'uniswap/src/features/chains/evm/info/unichain'
-import { WORLD_CHAIN_INFO } from 'uniswap/src/features/chains/evm/info/worldchain'
-import { ZKSYNC_CHAIN_INFO } from 'uniswap/src/features/chains/evm/info/zksync'
-import { ZORA_CHAIN_INFO } from 'uniswap/src/features/chains/evm/info/zora'
-import { SOLANA_CHAIN_INFO } from 'uniswap/src/features/chains/svm/info/solana'
+import { NEXUS_CHAIN_INFO } from 'uniswap/src/features/chains/evm/info/nexus'
 import { UniverseChainId, UniverseChainInfo } from 'uniswap/src/features/chains/types'
 import { Platform } from 'uniswap/src/features/platforms/types/Platform'
 import { getNonEmptyArrayOrThrow } from 'utilities/src/primitives/array'
@@ -22,37 +7,13 @@ export function getChainInfo(chainId: UniverseChainId): UniverseChainInfo {
   return UNIVERSE_CHAIN_INFO[chainId]
 }
 
-export const ORDERED_CHAINS = [
-  MAINNET_CHAIN_INFO,
-  UNICHAIN_CHAIN_INFO,
-  MONAD_CHAIN_INFO,
-  SOLANA_CHAIN_INFO,
-  POLYGON_CHAIN_INFO,
-  ARBITRUM_CHAIN_INFO,
-  OPTIMISM_CHAIN_INFO,
-  BASE_CHAIN_INFO,
-  BNB_CHAIN_INFO,
-  BLAST_CHAIN_INFO,
-  AVALANCHE_CHAIN_INFO,
-  CELO_CHAIN_INFO,
-  WORLD_CHAIN_INFO,
-  SONEIUM_CHAIN_INFO,
-  ZORA_CHAIN_INFO,
-  ZKSYNC_CHAIN_INFO,
-  SEPOLIA_CHAIN_INFO,
-  UNICHAIN_SEPOLIA_CHAIN_INFO,
-] as const satisfies UniverseChainInfo[]
+export const ORDERED_CHAINS = [NEXUS_CHAIN_INFO] as const satisfies UniverseChainInfo[]
 
-type ConstChainInfo<P extends Platform = Platform> = Extract<(typeof ORDERED_CHAINS)[number], { platform: P }>
+type ConstChainInfo = Extract<(typeof ORDERED_CHAINS)[number], { platform: Platform.EVM }>
 
-function getOrderedEVMChains(): ConstChainInfo<Platform.EVM>[] {
-  const evmChains: ConstChainInfo<Platform.EVM>[] = []
-  for (const chain of ORDERED_CHAINS) {
-    if (chain.platform === Platform.EVM) {
-      evmChains.push(chain)
-    }
-  }
-  return evmChains
+function getOrderedEVMChains(): ConstChainInfo[] {
+  // Since we only have EVM chains now (Nexus), just return ORDERED_CHAINS
+  return [...ORDERED_CHAINS]
 }
 
 export const ALL_CHAIN_IDS: UniverseChainId[] = ORDERED_CHAINS.map((chain) => chain.id)
@@ -68,29 +29,7 @@ type AllChainsMap = {
 }
 
 export const UNIVERSE_CHAIN_INFO = {
-  // MAINNETS
-  [UniverseChainId.Mainnet]: MAINNET_CHAIN_INFO,
-  [UniverseChainId.Unichain]: UNICHAIN_CHAIN_INFO,
-  [UniverseChainId.Polygon]: POLYGON_CHAIN_INFO,
-  [UniverseChainId.ArbitrumOne]: ARBITRUM_CHAIN_INFO,
-  [UniverseChainId.Optimism]: OPTIMISM_CHAIN_INFO,
-  [UniverseChainId.Base]: BASE_CHAIN_INFO,
-  [UniverseChainId.Bnb]: BNB_CHAIN_INFO,
-  [UniverseChainId.Blast]: BLAST_CHAIN_INFO,
-  [UniverseChainId.Avalanche]: AVALANCHE_CHAIN_INFO,
-  [UniverseChainId.Celo]: CELO_CHAIN_INFO,
-  [UniverseChainId.WorldChain]: WORLD_CHAIN_INFO,
-  [UniverseChainId.Soneium]: SONEIUM_CHAIN_INFO,
-  [UniverseChainId.Zora]: ZORA_CHAIN_INFO,
-  [UniverseChainId.Zksync]: ZKSYNC_CHAIN_INFO,
-  [UniverseChainId.Monad]: MONAD_CHAIN_INFO,
-
-  // TESTNET
-  [UniverseChainId.Sepolia]: SEPOLIA_CHAIN_INFO,
-  [UniverseChainId.UnichainSepolia]: UNICHAIN_SEPOLIA_CHAIN_INFO,
-
-  // SVM
-  [UniverseChainId.Solana]: SOLANA_CHAIN_INFO,
+  [UniverseChainId.Nexus]: NEXUS_CHAIN_INFO,
 } as const satisfies AllChainsMap
 
 export const GQL_MAINNET_CHAINS = ORDERED_EVM_CHAINS.filter((chain) => !chain.testnet).map(
@@ -101,6 +40,6 @@ export const GQL_TESTNET_CHAINS = ORDERED_EVM_CHAINS.filter((chain) => chain.tes
   (chain) => chain.backendChain.chain,
 )
 
-// If limit support expands beyond Mainnet, refactor to use a `supportsLimits`
+// If limit support expands beyond Nexus, refactor to use a `supportsLimits`
 // property on chain info objects and filter chains, similar to the pattern used above
-export const LIMIT_SUPPORTED_CHAINS = [UniverseChainId.Mainnet]
+export const LIMIT_SUPPORTED_CHAINS = [UniverseChainId.Nexus]

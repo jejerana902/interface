@@ -27,8 +27,8 @@ export function isSelfCallWithData({
     !!from &&
     !!to &&
     areAddressesEqual({
-      addressInput1: { address: from, chainId: chainId ?? UniverseChainId.Mainnet },
-      addressInput2: { address: to, chainId: chainId ?? UniverseChainId.Mainnet },
+      addressInput1: { address: from, chainId: chainId ?? UniverseChainId.Nexus },
+      addressInput2: { address: to, chainId: chainId ?? UniverseChainId.Nexus },
     }) &&
     data !== undefined &&
     data !== '0x'

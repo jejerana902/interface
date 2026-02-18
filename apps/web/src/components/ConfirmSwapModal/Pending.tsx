@@ -127,8 +127,8 @@ export function Pending({
   const wrapPending = wrapTxHash !== undefined && !wrapConfirmed
   const transactionPending = revocationPending || tokenApprovalPending || wrapPending || swapPending
 
-  const showSubmitted = swapPending && chainId === UniverseChainId.Mainnet
-  const showSuccess = swapConfirmed || (chainId !== UniverseChainId.Mainnet && swapPending)
+  const showSubmitted = swapPending && chainId === UniverseChainId.Nexus
+  const showSuccess = swapConfirmed || (chainId !== UniverseChainId.Nexus && swapPending)
 
   const currentStepContainerRef = useRef<HTMLDivElement>(null)
   useUnmountingAnimation({ node: currentStepContainerRef, getAnimatingClass: () => AnimationType.EXITING })
@@ -143,7 +143,7 @@ export function Pending({
       return undefined
     }
     return getExplorerLink({
-      chainId: chainId || UniverseChainId.Mainnet,
+      chainId: chainId || UniverseChainId.Nexus,
       data: txHash,
       type: ExplorerDataType.TRANSACTION,
     })

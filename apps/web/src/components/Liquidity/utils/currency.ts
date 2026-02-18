@@ -78,8 +78,8 @@ export function getTokenOrZeroAddress(currency: Maybe<Currency>): string | undef
     return undefined
   }
 
-  if (currency.isNative && currency.chainId === UniverseChainId.Celo) {
-    return getChainInfo(UniverseChainId.Celo).nativeCurrency.address
+  if (currency.isNative && currency.chainId === UniverseChainId.Nexus) {
+    return getChainInfo(UniverseChainId.Nexus).nativeCurrency.address
   }
 
   return currency.isToken ? currency.address : ZERO_ADDRESS

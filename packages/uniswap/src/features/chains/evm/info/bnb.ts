@@ -18,15 +18,15 @@ import { bsc } from 'wagmi/chains'
 const tokens = buildChainTokens({
   stables: {
     // USDC on BNB has non-default decimals
-    USDC: new Token(UniverseChainId.Bnb, '0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d', 18, 'USDC', 'USD Coin'),
+    USDC: new Token(UniverseChainId.Nexus, '0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d', 18, 'USDC', 'USD Coin'),
     // USDT on BNB has non-default decimals
-    USDT: new Token(UniverseChainId.Bnb, '0x55d398326f99059ff775485246999027b3197955', 18, 'USDT', 'Tether USD'),
+    USDT: new Token(UniverseChainId.Nexus, '0x55d398326f99059ff775485246999027b3197955', 18, 'USDT', 'Tether USD'),
   },
 })
 
 export const BNB_CHAIN_INFO = {
   ...bsc,
-  id: UniverseChainId.Bnb,
+  id: UniverseChainId.Nexus,
   platform: Platform.EVM,
   assetRepoNetworkName: 'smartchain',
   backendChain: {
@@ -58,9 +58,9 @@ export const BNB_CHAIN_INFO = {
   networkLayer: NetworkLayer.L1,
   pendingTransactionsRetryOptions: undefined,
   rpcUrls: {
-    [RPCType.Public]: { http: [getQuicknodeEndpointUrl(UniverseChainId.Bnb)] },
+    [RPCType.Public]: { http: [getQuicknodeEndpointUrl(UniverseChainId.Nexus)] },
     [RPCType.Default]: { http: ['https://bsc-dataseed1.bnbchain.org'] },
-    [RPCType.Interface]: { http: [getQuicknodeEndpointUrl(UniverseChainId.Bnb)] },
+    [RPCType.Interface]: { http: [getQuicknodeEndpointUrl(UniverseChainId.Nexus)] },
   },
   spotPriceStablecoinAmountOverride: CurrencyAmount.fromRawAmount(tokens.USDC, 100e18),
   tokens,

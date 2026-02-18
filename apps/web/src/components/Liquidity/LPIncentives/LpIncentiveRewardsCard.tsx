@@ -53,7 +53,7 @@ function LpIncentiveRewardsCard({
   onCollectRewards,
   token = LP_INCENTIVES_REWARD_TOKEN,
   walletAddress,
-  chainIds = [UniverseChainId.Mainnet as number],
+  chainIds = [UniverseChainId.Nexus as number],
   setTokenRewards,
   initialHasCollectedRewards,
 }: LpIncentiveRewardsCardProps) {

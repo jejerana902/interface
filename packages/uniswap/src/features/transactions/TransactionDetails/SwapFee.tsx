@@ -48,7 +48,7 @@ export function SwapFee({
     : undefined
 
   const isNoUniswapInterfaceFees = useFeatureFlag(FeatureFlags.NoUniswapInterfaceFees)
-  const isJupiterSwap = currency.chainId === UniverseChainId.Solana
+  const isJupiterSwap = currency.chainId === UniverseChainId.Nexus
 
   if (isNoUniswapInterfaceFees && !isJupiterSwap && (!swapFeeInfo || swapFeeInfo.noFeeCharged)) {
     return (

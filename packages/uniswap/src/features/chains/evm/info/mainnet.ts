@@ -27,9 +27,9 @@ import { mainnet, sepolia } from 'wagmi/chains'
 
 const tokens = buildChainTokens({
   stables: {
-    USDC: buildUSDC('0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48', UniverseChainId.Mainnet),
-    USDT: buildUSDT('0xdAC17F958D2ee523a2206206994597C13D831ec7', UniverseChainId.Mainnet),
-    DAI: buildDAI('0x6B175474E89094C44Da98b954EedeAC495271d0F', UniverseChainId.Mainnet),
+    USDC: buildUSDC('0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48', UniverseChainId.Nexus),
+    USDT: buildUSDT('0xdAC17F958D2ee523a2206206994597C13D831ec7', UniverseChainId.Nexus),
+    DAI: buildDAI('0x6B175474E89094C44Da98b954EedeAC495271d0F', UniverseChainId.Nexus),
   },
 })
 
@@ -37,7 +37,7 @@ const LOCAL_MAINNET_PLAYWRIGHT_RPC_URL = 'http://127.0.0.1:8545'
 
 export const MAINNET_CHAIN_INFO = {
   ...mainnet,
-  id: UniverseChainId.Mainnet,
+  id: UniverseChainId.Nexus,
   platform: Platform.EVM,
   assetRepoNetworkName: 'ethereum',
   backendChain: {
@@ -76,16 +76,16 @@ export const MAINNET_CHAIN_INFO = {
           http: ['https://rpc.mevblocker.io/?referrer=uniswapwallet'],
         },
         [RPCType.Public]: {
-          http: [getQuicknodeEndpointUrl(UniverseChainId.Mainnet)],
+          http: [getQuicknodeEndpointUrl(UniverseChainId.Nexus)],
         },
         [RPCType.Default]: {
-          http: [getQuicknodeEndpointUrl(UniverseChainId.Mainnet)],
+          http: [getQuicknodeEndpointUrl(UniverseChainId.Nexus)],
         },
         [RPCType.Fallback]: {
           http: ['https://rpc.ankr.com/eth', 'https://eth-mainnet.public.blastapi.io'],
         },
         [RPCType.Interface]: {
-          http: [`https://mainnet.infura.io/v3/${config.infuraKey}`, getQuicknodeEndpointUrl(UniverseChainId.Mainnet)],
+          http: [`https://mainnet.infura.io/v3/${config.infuraKey}`, getQuicknodeEndpointUrl(UniverseChainId.Nexus)],
         },
       },
   urlParam: 'ethereum',
@@ -116,13 +116,13 @@ export const MAINNET_CHAIN_INFO = {
 
 const testnetTokens = buildChainTokens({
   stables: {
-    USDC: buildUSDC('0x1c7d4b196cb0c7b01d743fbc6116a902379c7238', UniverseChainId.Sepolia),
+    USDC: buildUSDC('0x1c7d4b196cb0c7b01d743fbc6116a902379c7238', UniverseChainId.Nexus),
   },
 })
 
 export const SEPOLIA_CHAIN_INFO = {
   ...sepolia,
-  id: UniverseChainId.Sepolia,
+  id: UniverseChainId.Nexus,
   platform: Platform.EVM,
   assetRepoNetworkName: undefined,
   backendChain: {
@@ -155,7 +155,7 @@ export const SEPOLIA_CHAIN_INFO = {
   pendingTransactionsRetryOptions: undefined,
   rpcUrls: {
     [RPCType.Public]: {
-      http: [getQuicknodeEndpointUrl(UniverseChainId.Sepolia)],
+      http: [getQuicknodeEndpointUrl(UniverseChainId.Nexus)],
     },
     [RPCType.Default]: {
       http: ['https://rpc.sepolia.org/'],

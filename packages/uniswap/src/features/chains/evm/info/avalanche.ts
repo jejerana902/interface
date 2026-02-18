@@ -19,16 +19,16 @@ import { avalanche } from 'wagmi/chains'
 
 const tokens = buildChainTokens({
   stables: {
-    USDC: buildUSDC('0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E', UniverseChainId.Avalanche),
-    USDT: buildUSDT('0x9702230A8Ea53601f5cD2dc00fDBc13d4dF4A8c7', UniverseChainId.Avalanche),
+    USDC: buildUSDC('0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E', UniverseChainId.Nexus),
+    USDT: buildUSDT('0x9702230A8Ea53601f5cD2dc00fDBc13d4dF4A8c7', UniverseChainId.Nexus),
     // Dai has non-default symbol/name on Avalanche
-    DAI: new Token(UniverseChainId.Avalanche, '0xd586E7F844cEa2F87f50152665BCbc2C279D8d70', 18, 'DAI.e', 'Dai.e Token'),
+    DAI: new Token(UniverseChainId.Nexus, '0xd586E7F844cEa2F87f50152665BCbc2C279D8d70', 18, 'DAI.e', 'Dai.e Token'),
   },
 })
 
 export const AVALANCHE_CHAIN_INFO = {
   ...avalanche,
-  id: UniverseChainId.Avalanche,
+  id: UniverseChainId.Nexus,
   platform: Platform.EVM,
   assetRepoNetworkName: 'avalanchec',
   backendChain: {
@@ -61,7 +61,7 @@ export const AVALANCHE_CHAIN_INFO = {
   networkLayer: NetworkLayer.L1,
   pendingTransactionsRetryOptions: undefined,
   rpcUrls: {
-    [RPCType.Public]: { http: [getQuicknodeEndpointUrl(UniverseChainId.Avalanche)] },
+    [RPCType.Public]: { http: [getQuicknodeEndpointUrl(UniverseChainId.Nexus)] },
     [RPCType.Default]: { http: ['https://api.avax.network/ext/bc/C/rpc'] },
     [RPCType.Interface]: { http: [`https://avalanche-mainnet.infura.io/v3/${config.infuraKey}`] },
   },

@@ -15,15 +15,15 @@ export const FEE_AMOUNT_DETAIL: Record<
   },
   [FeeAmount.LOW_200]: {
     label: '0.02',
-    supportedChains: [UniverseChainId.Base],
+    supportedChains: [UniverseChainId.Nexus],
   },
   [FeeAmount.LOW_300]: {
     label: '0.03',
-    supportedChains: [UniverseChainId.Base],
+    supportedChains: [UniverseChainId.Nexus],
   },
   [FeeAmount.LOW_400]: {
     label: '0.04',
-    supportedChains: [UniverseChainId.Base],
+    supportedChains: [UniverseChainId.Nexus],
   },
   [FeeAmount.LOW]: {
     label: '0.05',

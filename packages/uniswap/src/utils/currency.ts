@@ -90,7 +90,7 @@ export function getCurrencyDisplayText(
   return tokenAddressString &&
     getValidAddress({
       address: tokenAddressString,
-      chainId: currency?.chainId ?? UniverseChainId.Mainnet,
+      chainId: currency?.chainId ?? UniverseChainId.Nexus,
     })
     ? shortenAddress({ address: tokenAddressString })
     : tokenAddressString

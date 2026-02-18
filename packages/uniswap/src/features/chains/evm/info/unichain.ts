@@ -17,14 +17,14 @@ import { unichainSepolia } from 'wagmi/chains'
 
 const tokens = buildChainTokens({
   stables: {
-    USDC: buildUSDC('0x078D782b760474a361dDA0AF3839290b0EF57AD6', UniverseChainId.Unichain),
+    USDC: buildUSDC('0x078D782b760474a361dDA0AF3839290b0EF57AD6', UniverseChainId.Nexus),
   },
 })
 
 export const UNICHAIN_CHAIN_INFO = {
   // ...unichain, // TODO update once available from viem
   name: 'Unichain',
-  id: UniverseChainId.Unichain,
+  id: UniverseChainId.Nexus,
   platform: Platform.EVM,
   assetRepoNetworkName: 'unichain',
   backendChain: {
@@ -55,9 +55,9 @@ export const UNICHAIN_CHAIN_INFO = {
   networkLayer: NetworkLayer.L2,
   pendingTransactionsRetryOptions: undefined,
   rpcUrls: {
-    [RPCType.Public]: { http: [getQuicknodeEndpointUrl(UniverseChainId.Unichain)] },
+    [RPCType.Public]: { http: [getQuicknodeEndpointUrl(UniverseChainId.Nexus)] },
     [RPCType.Default]: { http: ['https://mainnet.unichain.org'] },
-    [RPCType.Interface]: { http: [getQuicknodeEndpointUrl(UniverseChainId.Unichain)] },
+    [RPCType.Interface]: { http: [getQuicknodeEndpointUrl(UniverseChainId.Nexus)] },
   },
   tokens,
   statusPage: undefined,
@@ -79,7 +79,7 @@ export const UNICHAIN_CHAIN_INFO = {
 
 const testnetTokens = buildChainTokens({
   stables: {
-    USDC: buildUSDC('0x31d0220469e10c4E71834a79b1f276d740d3768F', UniverseChainId.UnichainSepolia),
+    USDC: buildUSDC('0x31d0220469e10c4E71834a79b1f276d740d3768F', UniverseChainId.NexusSepolia),
   },
 })
 
@@ -87,7 +87,7 @@ export const UNICHAIN_SEPOLIA_CHAIN_INFO = {
   ...unichainSepolia,
   name: 'Unichain Sepolia',
   testnet: true,
-  id: UniverseChainId.UnichainSepolia,
+  id: UniverseChainId.NexusSepolia,
   platform: Platform.EVM,
   assetRepoNetworkName: undefined,
   backendChain: {
@@ -118,13 +118,13 @@ export const UNICHAIN_SEPOLIA_CHAIN_INFO = {
   pendingTransactionsRetryOptions: undefined,
   rpcUrls: {
     [RPCType.Public]: {
-      http: [getQuicknodeEndpointUrl(UniverseChainId.UnichainSepolia)],
+      http: [getQuicknodeEndpointUrl(UniverseChainId.NexusSepolia)],
     },
     [RPCType.Default]: {
-      http: [getQuicknodeEndpointUrl(UniverseChainId.UnichainSepolia)],
+      http: [getQuicknodeEndpointUrl(UniverseChainId.NexusSepolia)],
     },
     [RPCType.Interface]: {
-      http: [getQuicknodeEndpointUrl(UniverseChainId.UnichainSepolia)],
+      http: [getQuicknodeEndpointUrl(UniverseChainId.NexusSepolia)],
     },
   },
   tokens: testnetTokens,

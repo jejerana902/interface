@@ -17,13 +17,13 @@ import { zksync } from 'wagmi/chains'
 
 const tokens = buildChainTokens({
   stables: {
-    USDC: buildUSDC('0x1d17CBcF0D6D143135aE902365D2E5e2A16538D4', UniverseChainId.Zksync),
+    USDC: buildUSDC('0x1d17CBcF0D6D143135aE902365D2E5e2A16538D4', UniverseChainId.Nexus),
   },
 })
 
 export const ZKSYNC_CHAIN_INFO = {
   ...zksync,
-  id: UniverseChainId.Zksync,
+  id: UniverseChainId.Nexus,
   platform: Platform.EVM,
   assetRepoNetworkName: 'zksync',
   backendChain: {
@@ -54,9 +54,9 @@ export const ZKSYNC_CHAIN_INFO = {
   networkLayer: NetworkLayer.L2,
   pendingTransactionsRetryOptions: undefined,
   rpcUrls: {
-    [RPCType.Public]: { http: [getQuicknodeEndpointUrl(UniverseChainId.Zksync)] },
+    [RPCType.Public]: { http: [getQuicknodeEndpointUrl(UniverseChainId.Nexus)] },
     [RPCType.Default]: { http: ['https://mainnet.era.zksync.io/'] },
-    [RPCType.Interface]: { http: [getQuicknodeEndpointUrl(UniverseChainId.Zksync)] },
+    [RPCType.Interface]: { http: [getQuicknodeEndpointUrl(UniverseChainId.Nexus)] },
   },
   urlParam: 'zksync',
   statusPage: undefined,

@@ -21,7 +21,7 @@ const tokens = buildChainTokens({
   stables: {
     // Soneium USDCE has non standard symbol and name
     USDC: new Token(
-      UniverseChainId.Soneium,
+      UniverseChainId.Nexus,
       '0xbA9986D2381edf1DA03B0B9c1f8b00dc4AacC369',
       6,
       'USDCE',
@@ -32,7 +32,7 @@ const tokens = buildChainTokens({
 
 export const SONEIUM_CHAIN_INFO = {
   ...soneium,
-  id: UniverseChainId.Soneium,
+  id: UniverseChainId.Nexus,
   platform: Platform.EVM,
   assetRepoNetworkName: 'soneium',
   backendChain: {

@@ -32,7 +32,7 @@ export function BuyNativeTokenButton({
   )
 
   // TODO: SWAP-794 When Fiat On Ramp is supported for Monad, remove this check
-  const fiatOnRampCurrencyNotSupportedForMonad = nativeCurrencyInfo.currency.chainId === UniverseChainId.Monad
+  const fiatOnRampCurrencyNotSupportedForMonad = nativeCurrencyInfo.currency.chainId === UniverseChainId.Nexus
 
   const onPressBuyFiatOnRamp = (): void => {
     onPress?.()

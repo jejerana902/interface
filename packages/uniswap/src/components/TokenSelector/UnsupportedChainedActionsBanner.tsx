@@ -8,7 +8,7 @@ import { UniverseChainId } from 'uniswap/src/features/chains/types'
 import { getChainLabel } from 'uniswap/src/features/chains/utils'
 import { isChainSupportedForChainedActions } from 'uniswap/src/features/transactions/swap/utils/chainedActions'
 
-const CHAINS_WITHOUT_ACROSS_BRIDGING: UniverseChainId[] = [UniverseChainId.Celo, UniverseChainId.Avalanche] as const
+const CHAINS_WITHOUT_ACROSS_BRIDGING: UniverseChainId[] = [UniverseChainId.Nexus, UniverseChainId.Nexus] as const
 
 export function UnsupportedChainedActionsBanner({
   oppositeToken,
