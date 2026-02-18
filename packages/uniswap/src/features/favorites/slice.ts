@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { Ether } from '@uniswap/sdk-core'
-import { WBTC } from 'uniswap/src/constants/tokens'
+import { USDC } from 'uniswap/src/constants/tokens'
 import { normalizeCurrencyIdForMapLookup } from 'uniswap/src/data/cache'
 import { UniverseChainId } from 'uniswap/src/features/chains/types'
 import { CurrencyId } from 'uniswap/src/types/currency'
@@ -12,12 +12,12 @@ export interface FavoritesState {
   watchedAddresses: Address[]
 }
 
-// Default currency ids, need to be normalized to match slice add and remove behavior
-const WBTC_CURRENCY_ID = normalizeCurrencyIdForMapLookup(idFromCurrency(WBTC))
+// Default currency ids for Nexus, need to be normalized to match slice add and remove behavior
+const USDC_CURRENCY_ID = normalizeCurrencyIdForMapLookup(idFromCurrency(USDC))
 const ETH_CURRENCY_ID = normalizeCurrencyIdForMapLookup(idFromCurrency(Ether.onChain(UniverseChainId.Nexus)))
 
 export const initialFavoritesState: FavoritesState = {
-  tokens: [ETH_CURRENCY_ID, WBTC_CURRENCY_ID],
+  tokens: [ETH_CURRENCY_ID, USDC_CURRENCY_ID],
   watchedAddresses: [],
 }
 
